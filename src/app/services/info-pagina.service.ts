@@ -11,7 +11,14 @@ export class InfoPaginaService {
   info: InfoPagina = {};
   cargada = false;
 
+  equipo: any[]
+
   constructor(private http: HttpClient) { 
+      this.cargarInfo();
+      this.cargarEquipo();
+  }
+
+  private cargarInfo(){
     console.log('Servicio de Info Pagina Cargado');
     //leer json
     this.http.get('assets/data/data-pagina.json').subscribe(
@@ -22,4 +29,18 @@ export class InfoPaginaService {
       }
     );
   }
+
+  private cargarEquipo(){
+    console.log('Servicio de Carga de Equipo');
+    //leer json
+    this.http.get('https://datosstalin.firebaseio.com/equipo.json').subscribe(
+      (respuesta: any[]) => {
+        // this.cargada = true;
+        this.equipo = respuesta;
+        console.log(this.equipo);
+      }
+    );
+  }
+
+
 }
