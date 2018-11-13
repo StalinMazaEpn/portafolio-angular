@@ -25,7 +25,7 @@ export class InfoPaginaService {
       (respuesta: InfoPagina) => {
         this.cargada = true;
         this.info = respuesta;
-        console.log(this.info);
+        // console.log(this.info);
       }
     );
   }
@@ -37,7 +37,7 @@ export class InfoPaginaService {
       (respuesta: any[]) => {
         // this.cargada = true;
         this.equipo = respuesta;
-        console.log(this.equipo);
+        // console.log(this.equipo);
       }
     );
   }
