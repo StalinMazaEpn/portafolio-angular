@@ -1,30 +1,29 @@
-# PortafolioNg
+# PortafolioNgTemplateHTML
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+Repositorio básico que se enfoca en convertir un sitio web estático de HTML hacia una aplicación en Angular
 
-## Development server
+## Ejecutar el servidor de desarrollo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Ejecuta el comando `ng serve` para habilitar el servidor de desarrollo. Una vez encendido y habilitado se puede acceder desde la URL `http://localhost:4200/`. La aplicación se recargará automáticamente si cambias alguno de los archivos de origen.
 
-## Code scaffolding
+## Generar código automatizado
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Ejecuta `ng generate component component-name`para generar un nuevo componente. También se puede ejecutar`ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Crear el build de la aplicación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Se ejecuta con el comando `ng build` para construir la aplicación. Se guarda en el directorio `dist/`. Se usa el comando `--prod` para construir usando las variables de entorno de producción.
 
-## Running unit tests
+## Ejecutar pruebas unitarias y de integración
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Se ejecuta con el comando: `ng test` usando [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Ejecutar pruebas de aceptación
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Se ejecuta con el comando: `ng e2e` usando [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Notas
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
-## How to manage update to version 7 to 12
-[Update from v7 to 12](https://update.angular.io/?v=7.0-12.0)
+> El proyecto originalmente se codifico con Angular en la versión 7, se realizó 
+una migración hacia la versión 12 siguiendo los pasos
+proporcionados por Angular que se pueden probar en el siguiente enlace: [Update from v7 to 12](https://update.angular.io/?v=7.0-12.0)

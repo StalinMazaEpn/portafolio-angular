@@ -8,7 +8,7 @@ import { Producto } from '../interfaces/producto.interface';
 export class ProductosService {
 
   cargandoProd = true;
- 
+
   productos: Producto[] = [];
   productosFiltrado: Producto[] = [];
 
@@ -16,15 +16,15 @@ export class ProductosService {
       this.cargarProductos();
    }
 
-   private cargarProductos(){
+   private cargarProductos(): Promise<void>{
 
      //trabajando con promesas
-     
+
     return new Promise((resolve, reject) =>{
 
       this.http.get('https://datosstalin.firebaseio.com/productos_idx.json').subscribe(
-        (respuesta: Producto[]) => {       
-       
+        (respuesta: Producto[]) => {
+
          this.productos = respuesta;
          this.cargandoProd = false;
          resolve();
@@ -32,12 +32,12 @@ export class ProductosService {
          // setTimeout(()=>{
          //   this.cargando = false;
          // }, 2000);
- 
+
         });
 
      });
 
-     
+
 
    }
 
@@ -58,8 +58,8 @@ export class ProductosService {
       //aplicar filtro
       this.filtrarProductos(termino);
     }
-    
-  }  
+
+  }
 
 
   private filtrarProductos(termino:string){
@@ -80,7 +80,7 @@ export class ProductosService {
 
     console.log(this.productosFiltrado);
 
-    
+
   }
 
 }
