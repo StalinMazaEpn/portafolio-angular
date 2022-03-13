@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InfoPaginaService } from '../../services/info-pagina.service';
+import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   constructor(public _servicioInfoPage: InfoPaginaService,
-              private router: Router) { 
-
+              private router: Router) {
+                this._servicioInfoPage.cargarInfo();
   }
 
   ngOnInit() {
@@ -23,7 +23,6 @@ export class HeaderComponent implements OnInit {
     }
 
     this.router.navigate(['search', termino]);
-    console.log(termino);
   }
 
 }

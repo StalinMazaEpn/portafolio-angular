@@ -22,8 +22,19 @@ Se ejecuta con el comando: `ng test` usando [Karma](https://karma-runner.github.
 
 Se ejecuta con el comando: `ng e2e` usando [Protractor](http://www.protractortest.org/).
 
+## Esquema
+
+- **src** Carpeta con los archivos del proyecto
+  - **interfaces** Interfaces para los tipos de daros que maneja el proyecto
+  - **pages** Páginas de la aplicación
+  - **services** Servicios HTTP que se conectan al API para la manipulación de los datos
+  - **shared** Componentes Compartidos
+
 ## Notas
 
-> El proyecto originalmente se codifico con Angular en la versión 7, se realizó 
-una migración hacia la versión 12 siguiendo los pasos
-proporcionados por Angular que se pueden probar en el siguiente enlace: [Update from v7 to 12](https://update.angular.io/?v=7.0-12.0)
+> El proyecto originalmente se codifico con Angular en la versión 7, se realizó una migración hacia la versión 13 siguiendo los pasos proporcionados por Angular que se pueden probar en el siguiente enlace: [Update from v7 to 13](https://update.angular.io/?v=7.0-13.0)
+
+> Links de Información sobre Testing
+> - [Unit and Integration Testing](https://medium.com/@ana.dvorkina/unit-and-integration-tests-for-angular-components-323a2c681972)
+> - [Angular Cypress: Learn How To Install And Run E2E Tests](https://www.youtube.com/watch?v=wGiU4qdFL6U)
+> - [Testing Angular Applications with Cypress](https://www.youtube.com/watch?v=4XJwy0BI0VI)

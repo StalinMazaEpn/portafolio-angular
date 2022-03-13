@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { InfoPagina } from '../interfaces/info-pagina.interface';
+import { HttpClient } from '@angular/common/http';
+import { InfoPagina } from 'src/app/interfaces/info-pagina.interface';
+import { Equipo } from 'src/app/interfaces/equipo.interface';
 
 @Injectable({
   //evita que no ponga el servicio en el imports
@@ -10,36 +11,30 @@ export class InfoPaginaService {
 
   info: InfoPagina = {};
   cargada = false;
+  equipo: Equipo[] = [];
 
-  equipo: any[]
-
-  constructor(private http: HttpClient) { 
-      this.cargarInfo();
-      this.cargarEquipo();
+  constructor(
+    private http: HttpClient
+  ) {
   }
 
-  private cargarInfo(){
-    console.log('Servicio de Info Pagina Cargado');
+  public cargarInfo(): void {
     //leer json
-    this.http.get('assets/data/data-pagina.json').subscribe(
-      (respuesta: InfoPagina) => {
+    this.http.get<InfoPagina>('assets/data/data-pagina.json').subscribe({
+      next: (respuesta: InfoPagina) => {
         this.cargada = true;
         this.info = respuesta;
-        // console.log(this.info);
       }
-    );
+    });
   }
 
-  private cargarEquipo(){
-    console.log('Servicio de Carga de Equipo');
+  private cargarEquipo(): void {
     //leer json
-    this.http.get('https://datosstalin.firebaseio.com/equipo.json').subscribe(
-      (respuesta: any[]) => {
-        // this.cargada = true;
+    this.http.get<Equipo[]>('https://datosstalin.firebaseio.com/equipo.json').subscribe({
+      next: (respuesta: Equipo[]) => {
         this.equipo = respuesta;
-        // console.log(this.equipo);
       }
-    );
+    });
   }
 
 

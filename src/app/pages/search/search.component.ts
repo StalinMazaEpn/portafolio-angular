@@ -10,17 +10,19 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class SearchComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
-              public productoService: ProductosService) { }
+    public productosService: ProductosService) {
+    this.productosService.cargarProductos();
+  }
 
   ngOnInit() {
 
     this.route.params.subscribe(
-          parametros=>{
-            
-            this.productoService.buscarProducto(parametros['termino']);
-            
-          }
-      );     
+      parametros => {
+
+        this.productosService.buscarProducto(parametros['termino']);
+
+      }
+    );
 
   }
 

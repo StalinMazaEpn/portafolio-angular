@@ -8,8 +8,11 @@ import { ProductosService } from './services/productos.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(public infoPaginaService: InfoPaginaService,
-    public productosService: ProductosService){
 
+  title = 'PortafolioNgTemplateHTML'
+
+  constructor(public infoPaginaService: InfoPaginaService,
+    public productosService: ProductosService) {
+    this.productosService.cargarProductos();
   }
 }

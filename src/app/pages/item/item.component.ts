@@ -11,29 +11,26 @@ import { ProductoDescripcion } from 'src/app/interfaces/producto-descripcion.int
 export class ItemComponent implements OnInit {
 
   cargandoProDesc = true;
-  producto: ProductoDescripcion;
-  productoID: string;
+  producto!: ProductoDescripcion;
+  productoID: string = '';
 
   constructor(private route: ActivatedRoute,
-              public productoService: ProductosService) { }
+    public productosService: ProductosService) {
+      this.productosService.cargarProductos();
+     }
 
   ngOnInit() {
 
     this.route.params.subscribe(
-        parametros =>{
-          // console.log(parametros['id']);
-          this.productoService.obtenerProducto(parametros['id']).subscribe(
-            (producto: ProductoDescripcion) => {
-              // console.log(producto);
-              this.cargandoProDesc = false;
-              this.producto = producto;
-              this.productoID = parametros['id'];
-              // setTimeout(()=>{
-              //    this.cargandoProDesc = false;
-              // }, 2000);
-            }
-          );
-        }
+      parametros => {
+        this.productosService.obtenerProducto(parametros['id']).subscribe(
+          (producto: ProductoDescripcion) => {
+            this.cargandoProDesc = false;
+            this.producto = producto;
+            this.productoID = parametros['id'];
+          }
+        );
+      }
     );
 
   }

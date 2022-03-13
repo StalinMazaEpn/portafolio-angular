@@ -4,9 +4,14 @@
 /dist
 /tmp
 /out-tsc
+/bazel-out
 
 # dependencies
 /node_modules
+/node_modules/*
+/server/node_modules
+npm-debug.log
+yarn-error.log
 
 # IDEs and editors
 /.idea
@@ -23,17 +28,25 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.code-workspace
+.history/*
 
 # misc
 /.angular/cache
+/.angular/cache/*
 /.sass-cache
 /connect.lock
 /coverage
+/coverage/*
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
 testem.log
 /typings
+/docs-app
+
+# Tunnel Test
+ngrok.exe
 
 # System Files
 .DS_Store
