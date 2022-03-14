@@ -10,19 +10,18 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   constructor(public _servicioInfoPage: InfoPaginaService,
-              private router: Router) {
-                this._servicioInfoPage.cargarInfo();
+    private router: Router) {
+    this._servicioInfoPage.cargarInfo();
   }
 
   ngOnInit() {
   }
 
-  buscarProducto(termino: string){
-    if(termino.length < 1) {
-      return;
+  async buscarProducto(termino: string): Promise<boolean> {
+    if (termino.length >= 1) {
+      return this.router.navigate(['search', termino]);
     }
-
-    this.router.navigate(['search', termino]);
+    return new Promise((resolve)=>resolve(false));
   }
 
 }

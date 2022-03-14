@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { InfoPagina } from 'src/app/interfaces/info-pagina.interface';
 import { Equipo } from 'src/app/interfaces/equipo.interface';
+import { Observable } from 'rxjs';
 
 @Injectable({
   //evita que no ponga el servicio en el imports
@@ -9,7 +10,7 @@ import { Equipo } from 'src/app/interfaces/equipo.interface';
 })
 export class InfoPaginaService {
 
-  info: InfoPagina = {};
+  info: InfoPagina | null = null;
   cargada = false;
   equipo: Equipo[] = [];
 
@@ -18,9 +19,17 @@ export class InfoPaginaService {
   ) {
   }
 
+  private getDataPagina(): Observable<InfoPagina> {
+    return this.http.get<InfoPagina>('assets/data/data-pagina.json');
+  }
+
+  private getDataEquipo(): Observable<Equipo[]> {
+    return this.http.get<Equipo[]>('https://datosstalin.firebaseio.com/equipo.json');
+  }
+
   public cargarInfo(): void {
     //leer json
-    this.http.get<InfoPagina>('assets/data/data-pagina.json').subscribe({
+    this.getDataPagina().subscribe({
       next: (respuesta: InfoPagina) => {
         this.cargada = true;
         this.info = respuesta;
@@ -28,9 +37,10 @@ export class InfoPaginaService {
     });
   }
 
-  private cargarEquipo(): void {
+  public cargarEquipo(): void {
     //leer json
-    this.http.get<Equipo[]>('https://datosstalin.firebaseio.com/equipo.json').subscribe({
+    /* istanbul ignore next */
+    this.getDataEquipo().subscribe({
       next: (respuesta: Equipo[]) => {
         this.equipo = respuesta;
       }

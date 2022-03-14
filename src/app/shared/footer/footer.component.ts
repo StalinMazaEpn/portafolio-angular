@@ -6,15 +6,12 @@ import { InfoPaginaService } from 'src/app/services/info-pagina.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
 
   yearFooter: number = new Date().getFullYear();
 
   constructor(public _servicioInfoPage: InfoPaginaService) {
     this._servicioInfoPage.cargarInfo();
-  }
-
-  ngOnInit() {
   }
 
 }

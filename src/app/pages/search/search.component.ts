@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { firstValueFrom } from 'rxjs';
 import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
@@ -9,21 +10,23 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute,
-    public productosService: ProductosService) {
+  parametros: any = {}
+  constructor(
+    private route: ActivatedRoute,
+    public productosService: ProductosService
+  ) {
     this.productosService.cargarProductos();
   }
 
-  ngOnInit() {
-
-    this.route.params.subscribe(
-      parametros => {
-
-        this.productosService.buscarProducto(parametros['termino']);
-
-      }
-    );
-
+  async ngOnInit() {
+    const params = await firstValueFrom(this.route.params);
+    console.warn('params', params)
+    this.parametros = params;
+    console.log('parametros', this.parametros)
+    await this.buscarProducto(this.parametros['termino']);
   }
 
+  public async buscarProducto(term: string) {
+    return await this.productosService.buscarProducto(term);
+  }
 }

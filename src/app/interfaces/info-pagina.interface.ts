@@ -1,10 +1,10 @@
 export interface InfoPagina{
-  titulo?: string;
-  email?: string;
-  nombre_corto?: string;
-  pagina_autor?: string;
-  facebook?: string;
-  twitter?: string;
-  instagram?: string;
-  equipo_trabajo?: any[];
+  email: string;
+  equipo_trabajo: any[];
+  facebook: string;
+  instagram: string;
+  nombre_corto: string;
+  pagina_autor: string;
+  titulo: string;
+  twitter: string;
 }

@@ -21,6 +21,10 @@ Se ejecuta con el comando: `ng test` usando [Karma](https://karma-runner.github.
 ## Ejecutar pruebas de aceptación
 
 Se ejecuta con el comando: `ng e2e` usando [Protractor](http://www.protractortest.org/).
+## Añadir Cypress para pruebas e2e
+```bash
+ng add @cypress/schematic #en reemplazo de protactor que fue deprecado
+```
 
 ## Esquema
 
@@ -38,3 +42,4 @@ Se ejecuta con el comando: `ng e2e` usando [Protractor](http://www.protractortes
 > - [Unit and Integration Testing](https://medium.com/@ana.dvorkina/unit-and-integration-tests-for-angular-components-323a2c681972)
 > - [Angular Cypress: Learn How To Install And Run E2E Tests](https://www.youtube.com/watch?v=wGiU4qdFL6U)
 > - [Testing Angular Applications with Cypress](https://www.youtube.com/watch?v=4XJwy0BI0VI)
+

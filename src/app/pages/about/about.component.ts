@@ -6,11 +6,15 @@ import { InfoPaginaService } from 'src/app/services/info-pagina.service';
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss']
 })
-export class AboutComponent implements OnInit {
+export class AboutComponent {
 
-  constructor(public infoService: InfoPaginaService) { }
+  constructor(public infoService: InfoPaginaService) {
+    this.cargarEquipo();
+  }
 
-  ngOnInit() {
+
+  cargarEquipo(): void {
+    this.infoService.cargarEquipo();
   }
 
 }
