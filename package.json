@@ -5,8 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "test-coverage": "ng test --code-coverage",
+    "test": "ng test --code-coverage",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
@@ -29,6 +28,11 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~13.2.6",
+    "@angular-eslint/builder": "13.1.0",
+    "@angular-eslint/eslint-plugin": "13.1.0",
+    "@angular-eslint/eslint-plugin-template": "13.1.0",
+    "@angular-eslint/schematics": "13.1.0",
+    "@angular-eslint/template-parser": "13.1.0",
     "@angular/cli": "~13.2.6",
     "@angular/compiler-cli": "~13.2.6",
     "@angular/language-service": "~13.2.6",
@@ -36,7 +40,14 @@
     "@types/jasmine": "~3.6.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
+    "@typescript-eslint/eslint-plugin": "5.11.0",
+    "@typescript-eslint/parser": "5.11.0",
     "codelyzer": "^6.0.0",
+    "cypress": "latest",
+    "eslint": "^8.2.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jsdoc": "^38.0.6",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",
     "karma": "~6.3.17",
@@ -48,7 +59,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~7.0.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.5.5",
-    "cypress": "latest"
+    "typescript": "~4.5.5"
   }
 }

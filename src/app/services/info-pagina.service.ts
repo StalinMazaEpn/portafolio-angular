@@ -19,14 +19,6 @@ export class InfoPaginaService {
   ) {
   }
 
-  private getDataPagina(): Observable<InfoPagina> {
-    return this.http.get<InfoPagina>('assets/data/data-pagina.json');
-  }
-
-  private getDataEquipo(): Observable<Equipo[]> {
-    return this.http.get<Equipo[]>('https://datosstalin.firebaseio.com/equipo.json');
-  }
-
   public cargarInfo(): void {
     //leer json
     this.getDataPagina().subscribe({
@@ -45,6 +37,14 @@ export class InfoPaginaService {
         this.equipo = respuesta;
       }
     });
+  }
+
+  private getDataPagina(): Observable<InfoPagina> {
+    return this.http.get<InfoPagina>('assets/data/data-pagina.json');
+  }
+
+  private getDataEquipo(): Observable<Equipo[]> {
+    return this.http.get<Equipo[]>('https://datosstalin.firebaseio.com/equipo.json');
   }
 
 

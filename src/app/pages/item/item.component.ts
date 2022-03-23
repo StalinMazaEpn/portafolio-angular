@@ -12,7 +12,7 @@ export class ItemComponent implements OnInit {
 
   cargandoProDesc = true;
   producto!: ProductoDescripcion;
-  productoID: string = '';
+  productoID = '';
 
   constructor(private route: ActivatedRoute,
     public productosService: ProductosService) {

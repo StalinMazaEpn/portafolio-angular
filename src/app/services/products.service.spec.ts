@@ -28,10 +28,10 @@ describe('ProductosService Test', () => {
 
   it('should load products data and hide loader', async () => {
     const mockupInfoPagina: Producto[] = [{
-      "categoria": 'Hogar',
-      "cod": "HG-5144",
-      "titulo": "Cafetera Profesional Oster",
-      "url": "https://picsum.photos/200"
+      'categoria': 'Hogar',
+      'cod': 'HG-5144',
+      'titulo': 'Cafetera Profesional Oster',
+      'url': 'https://picsum.photos/200'
     }];
     httpClienteSpy.get.and.returnValue(of(mockupInfoPagina))
     await service['cargarProductos']();
@@ -42,10 +42,10 @@ describe('ProductosService Test', () => {
 
   it('should filter products when there are no data', async () => {
     const mockupInfoPagina: Producto[] = [{
-      "categoria": 'Hogar',
-      "cod": "HG-5144",
-      "titulo": "Cafetera Profesional Oster",
-      "url": "https://picsum.photos/200"
+      'categoria': 'Hogar',
+      'cod': 'HG-5144',
+      'titulo': 'Cafetera Profesional Oster',
+      'url': 'https://picsum.photos/200'
     }];
     httpClienteSpy.get.and.returnValue(of(mockupInfoPagina))
     await service['buscarProducto']('cafetera');
@@ -54,10 +54,10 @@ describe('ProductosService Test', () => {
 
   it('should filter products when there are previous data', async () => {
     const mockupProductoList: Producto[] = [{
-      "categoria": 'Tecnología',
-      "cod": "HG-5144",
-      "titulo": "SmartTV Inteligente Sony",
-      "url": "https://picsum.photos/200"
+      'categoria': 'Tecnología',
+      'cod': 'HG-5144',
+      'titulo': 'SmartTV Inteligente Sony',
+      'url': 'https://picsum.photos/200'
     }];
     service.productos = mockupProductoList;
     await service['buscarProducto']('SmartTV');
@@ -67,17 +67,17 @@ describe('ProductosService Test', () => {
 
   it('should return Producto by its ID', (done: DoneFn) => {
     const mockupProducto: ProductoDescripcion = {
-      "categoria": 'Tecnología',
-      "desc1": "SmartTV Inteligente Sony",
-      "desc2": "SmartTV HHG-14 Sony",
-      "producto": "Sony HHG-1",
-      "resumen": "Lorme ipsum",
-      "subtitulo1": "Lorme ipsum 1",
-      "subtitulo2": "Lorme ipsum 2"
+      'categoria': 'Tecnología',
+      'desc1': 'SmartTV Inteligente Sony',
+      'desc2': 'SmartTV HHG-14 Sony',
+      'producto': 'Sony HHG-1',
+      'resumen': 'Lorme ipsum',
+      'subtitulo1': 'Lorme ipsum 1',
+      'subtitulo2': 'Lorme ipsum 2'
     }
 
     httpClienteSpy.get.and.returnValue(of(mockupProducto))
-    service['obtenerProducto']("jam7hs653g").subscribe({
+    service['obtenerProducto']('jam7hs653g').subscribe({
       next: (res: ProductoDescripcion) => {
         expect(Object.keys(res)).toEqual(Object.keys(mockupProducto))
         done();

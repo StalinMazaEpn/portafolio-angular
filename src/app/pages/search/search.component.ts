@@ -10,7 +10,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 })
 export class SearchComponent implements OnInit {
 
-  parametros: any = {}
+  parametros: any = {};
   constructor(
     private route: ActivatedRoute,
     public productosService: ProductosService
@@ -20,9 +20,9 @@ export class SearchComponent implements OnInit {
 
   async ngOnInit() {
     const params = await firstValueFrom(this.route.params);
-    console.warn('params', params)
+    console.warn('params', params);
     this.parametros = params;
-    console.log('parametros', this.parametros)
+    console.log('parametros', this.parametros);
     await this.buscarProducto(this.parametros['termino']);
   }
 

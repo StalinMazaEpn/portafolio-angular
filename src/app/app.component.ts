@@ -9,7 +9,7 @@ import { ProductosService } from './services/productos.service';
 })
 export class AppComponent {
 
-  title = 'PortafolioNgTemplateHTML'
+  title = 'PortafolioNgTemplateHTML';
 
   constructor(public infoPaginaService: InfoPaginaService,
     public productosService: ProductosService) {

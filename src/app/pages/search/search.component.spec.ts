@@ -1,7 +1,7 @@
-import { CommonModule } from "@angular/common";
-import { HttpClientModule } from "@angular/common/http";
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { BrowserModule } from "@angular/platform-browser";
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Router, ActivatedRoute, Params } from '@angular/router';
 import { Subject, of } from 'rxjs';
 import { SearchComponent } from './search.component';
@@ -63,10 +63,10 @@ describe('HeaderComponent Test', () => {
 
   it('should filter products when there are previous data', async () => {
     const mockupProductoList: Producto[] = [{
-      "categoria": 'Tecnología',
-      "cod": "HG-5144",
-      "titulo": "SmartTV Inteligente Sony",
-      "url": "https://picsum.photos/200"
+      'categoria': 'Tecnología',
+      'cod': 'HG-5144',
+      'titulo': 'SmartTV Inteligente Sony',
+      'url': 'https://picsum.photos/200'
     }];
     await component.buscarProducto('termino');
     console.log('componentSearch', component)
