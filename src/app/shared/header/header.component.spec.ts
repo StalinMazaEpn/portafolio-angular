@@ -37,13 +37,13 @@ describe('HeaderComponent Test', () => {
 
   it('should not redirect to search page due to empty search term', () => {
     component.buscarProducto('');
-    console.warn('router.url 1', router.url)
+    console.warn('router.url 1', router.url);
     expect(router.url !== '/search').toBeTrue();
   });
 
   it('should redirect to search page due to real search term', async () => {
     const responseSearch = await component.buscarProducto('maquinaria');
-    console.warn('router.url 2', router.url, responseSearch)
+    console.warn('router.url 2', router.url, responseSearch);
     expect(router.url === '/search/maquinaria').toBeTrue();
   });
 

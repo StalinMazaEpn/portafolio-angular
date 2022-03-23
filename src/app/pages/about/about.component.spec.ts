@@ -47,11 +47,11 @@ describe('AboutComponent Test', () => {
 
   it('should call loadEquipoFN', async () => {
     const mockupInfoPagina: Equipo[] = [{
-      'frase': 'A romper las fronteras del aburrimiento',
-      'nombre': 'Mauricio Velázquez',
-      'imagen': 'https://i.pravatar.cc/300?img=67',
-      'subtitulo': 'Fotográfo profesional',
-      'twitter': 'https://twitter.com/mauricio877'
+      frase: 'A romper las fronteras del aburrimiento',
+      nombre: 'Mauricio Velázquez',
+      imagen: 'https://i.pravatar.cc/300?img=67',
+      subtitulo: 'Fotográfo profesional',
+      twitter: 'https://twitter.com/mauricio877'
     }];
     httpClienteSpy.get.and.returnValue(of(mockupInfoPagina));
     const serviceMock = new InfoPaginaService(httpClienteSpy as any);

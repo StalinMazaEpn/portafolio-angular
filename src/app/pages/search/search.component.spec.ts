@@ -29,7 +29,7 @@ describe('HeaderComponent Test', () => {
         {
           provide: ActivatedRoute,
           useValue: {
-            params: params
+            params
           }
         }
       ]
@@ -50,26 +50,26 @@ describe('HeaderComponent Test', () => {
   });
 
   it('should call search product when params are provided', async () => {
-    const fakeParam = {'termino': '123'};
+    const fakeParam = {termino: '123'};
     component['route']['params'] = of(fakeParam);
 
     // await router.navigate(['search', 'maquinaria'])
     spyOn(component, 'buscarProducto');
     await component.ngOnInit();
-    console.log('component 2', component)
-    console.log('expect called')
+    console.log('component 2', component);
+    console.log('expect called');
     expect(component.buscarProducto).toHaveBeenCalled();
   });
 
   it('should filter products when there are previous data', async () => {
     const mockupProductoList: Producto[] = [{
-      'categoria': 'Tecnología',
-      'cod': 'HG-5144',
-      'titulo': 'SmartTV Inteligente Sony',
-      'url': 'https://picsum.photos/200'
+      categoria: 'Tecnología',
+      cod: 'HG-5144',
+      titulo: 'SmartTV Inteligente Sony',
+      url: 'https://picsum.photos/200'
     }];
     await component.buscarProducto('termino');
-    console.log('componentSearch', component)
+    console.log('componentSearch', component);
     expect(Array.isArray(component.productosService.productosFiltrado)).toBeTrue();
   });
 

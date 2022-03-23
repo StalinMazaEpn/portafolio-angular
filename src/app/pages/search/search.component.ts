@@ -23,7 +23,7 @@ export class SearchComponent implements OnInit {
     console.warn('params', params);
     this.parametros = params;
     console.log('parametros', this.parametros);
-    await this.buscarProducto(this.parametros['termino']);
+    await this.buscarProducto(this.parametros.termino);
   }
 
   public async buscarProducto(term: string) {

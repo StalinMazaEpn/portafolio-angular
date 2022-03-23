@@ -16,18 +16,18 @@ export class ItemComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
     public productosService: ProductosService) {
-      this.productosService.cargarProductos();
-     }
+    this.productosService.cargarProductos();
+  }
 
   ngOnInit() {
 
     this.route.params.subscribe(
-      parametros => {
-        this.productosService.obtenerProducto(parametros['id']).subscribe(
+      (parametros: any) => {
+        this.productosService.obtenerProducto(parametros.id).subscribe(
           (producto: ProductoDescripcion) => {
             this.cargandoProDesc = false;
             this.producto = producto;
-            this.productoID = parametros['id'];
+            this.productoID = parametros.id;
           }
         );
       }

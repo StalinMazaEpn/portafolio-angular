@@ -56,7 +56,7 @@
             "style": "camelCase"
           }
         ],
-        "dot-notation": [2, {"allowKeywords": true, "allowPattern": ""}]
+        "no-underscore-dangle":  "off"
       }
     },
     {

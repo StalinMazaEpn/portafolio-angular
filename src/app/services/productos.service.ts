@@ -70,7 +70,7 @@ export class ProductosService {
 
       });
       resolve();
-    })
+    });
 
   }
 
