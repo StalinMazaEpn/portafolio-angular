@@ -51,3 +51,11 @@ ngrok.exe
 # System Files
 .DS_Store
 Thumbs.db
+
+#Jasmine
+/jasmine
+# Cypress
+/cypress/videos
+/cypress/downloads
+/cypress/results
+/cypress/screenshots
