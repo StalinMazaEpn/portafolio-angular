@@ -39,7 +39,7 @@ module.exports = function (config) {
     junitReporter: {
       outputDir: require('path').join(__dirname, './jasmine'), // results will be saved as $outputDir/$browserName.xml
       outputFile: undefined, // if included, results will be saved as $outputDir/$browserName/$outputFile
-      suite: '',
+      suite: 'stalinmazadev',
       useBrowserName: false,
       nameFormatter: undefined,
       classNameFormatter: undefined,

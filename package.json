@@ -13,7 +13,8 @@
     "cypress:verify": "cypress verify",
     "cypress:open": "cypress open",
     "cypress:test": "cypress run --reporter junit",
-    "cypress:report": "jrm ./cypress/results/cypress-result.xml \"./cypress/results/*.xml\""
+    "cypress:report": "jrm ./cypress/results/cypress-result.xml \"./cypress/results/*.xml\"",
+    "copy-reports": "node template_report.js"
   },
   "private": true,
   "dependencies": {

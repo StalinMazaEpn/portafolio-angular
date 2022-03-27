@@ -33,13 +33,22 @@ module.exports = function (config) {
         { type: 'lcovonly' },
         { type: 'text-summary' },
         { type: 'cobertura' }
-      ]
+      ],
+      check: {
+				// thresholds for all files
+				global: {
+					statements: 76.25,
+					branches: 55.95,
+					functions: 71.4,
+					lines: 75.8,
+				}
+			},
     },
-    reporters: ['progress', 'kjhtml', 'junit'],
+    reporters: ['progress', 'kjhtml', 'junit', 'coverage'],
     junitReporter: {
-      outputDir: require('path').join(__dirname, './jasmine'), // results will be saved as $outputDir/$browserName.xml
+      outputDir: require('path').join(__dirname, './coverage/portafolioNG'), // results will be saved as $outputDir/$browserName.xml
       outputFile: undefined, // if included, results will be saved as $outputDir/$browserName/$outputFile
-      suite: '',
+      suite: 'stalinmazadev',
       useBrowserName: false,
       nameFormatter: undefined,
       classNameFormatter: undefined,
