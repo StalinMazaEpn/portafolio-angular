@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Router, ActivatedRoute, Params } from '@angular/router';
 import { Subject, of } from 'rxjs';
 import { SearchComponent } from './search.component';
-import { Producto } from '../../interfaces/producto.interface';
+import { Producto } from 'src/app/interfaces/producto.interface';
 
 describe('HeaderComponent Test', () => {
   let component: SearchComponent;
@@ -51,7 +51,9 @@ describe('HeaderComponent Test', () => {
 
   it('should call search product when params are provided', async () => {
     const fakeParam = {termino: '123'};
-    component['route']['params'] = of(fakeParam);
+    const keyPrimary = 'route';
+    const keySecondary = 'params';
+    component[keyPrimary][keySecondary] = of(fakeParam);
 
     // await router.navigate(['search', 'maquinaria'])
     spyOn(component, 'buscarProducto');

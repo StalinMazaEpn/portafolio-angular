@@ -1,19 +1,17 @@
 {
   "root": true,
-  "ignorePatterns": [
-    "projects/**/*"
-  ],
+  "ignorePatterns": ["projects/**/*"],
   "overrides": [
     {
-      "files": [
-        "*.ts"
-      ],
+      "files": ["src/**/*.ts"],
       "parserOptions": {
-        "project": [
-          "tsconfig.json",
-          "e2e/tsconfig.json"
-        ],
-        "createDefaultProgram": true
+        "project": ["tsconfig.json", "e2e/tsconfig.json"],
+        "createDefaultProgram": true,
+        "ecmaVersion": 2017,
+        "sourceType": "module"
+      },
+      "env": {
+        "es6": true
       },
       "extends": [
         "plugin:@angular-eslint/recommended",
@@ -42,7 +40,7 @@
           },
           {
             "selector": "variable",
-            "modifiers": ["const","exported"],
+            "modifiers": ["const", "exported"],
             "types": ["string", "number", "array", "boolean"],
             "format": ["UPPER_CASE"]
           }
@@ -56,16 +54,13 @@
             "style": "camelCase"
           }
         ],
-        "no-underscore-dangle":  "off"
+        "no-underscore-dangle": "off",
+        "dot-notation": [2, {"allowKeywords": true,  "allowPattern": ""}]
       }
     },
     {
-      "files": [
-        "*.html"
-      ],
-      "extends": [
-        "plugin:@angular-eslint/template/recommended"
-      ],
+      "files": ["src/**/*.html"],
+      "extends": ["plugin:@angular-eslint/template/recommended"],
       "rules": {}
     }
   ]

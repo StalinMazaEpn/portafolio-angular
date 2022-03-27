@@ -34,7 +34,7 @@ describe('ProductosService Test', () => {
       url: 'https://picsum.photos/200'
     }];
     httpClienteSpy.get.and.returnValue(of(mockupInfoPagina));
-    await service['cargarProductos']();
+    await service.cargarProductos();
 
     expect(service.cargandoProd).toBeFalsy();
     expect(service.productos.length > 0).toBeTrue();
@@ -48,7 +48,7 @@ describe('ProductosService Test', () => {
       url: 'https://picsum.photos/200'
     }];
     httpClienteSpy.get.and.returnValue(of(mockupInfoPagina));
-    await service['buscarProducto']('cafetera');
+    await service.buscarProducto('cafetera');
     expect(service.productosFiltrado.length > 0).toBeTrue();
   });
 
@@ -62,7 +62,7 @@ describe('ProductosService Test', () => {
       }
     ];
     service.productos = mockupProductoList;
-    await service['buscarProducto']('SmartTV');
+    await service.buscarProducto('SmartTV');
 
     expect(service.productosFiltrado.length > 0).toBeTrue();
   });
@@ -79,7 +79,7 @@ describe('ProductosService Test', () => {
     };
 
     httpClienteSpy.get.and.returnValue(of(mockupProducto));
-    service['obtenerProducto']('jam7hs653g').subscribe({
+    service.obtenerProducto('jam7hs653g').subscribe({
       next: (res: ProductoDescripcion) => {
         expect(Object.keys(res)).toEqual(Object.keys(mockupProducto));
         done();

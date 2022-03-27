@@ -5,7 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Router, RouterModule } from '@angular/router';
 import { AboutComponent } from './about.component';
 import { SearchComponent } from 'src/app/pages/search/search.component';
-import { InfoPaginaService } from '../../services/info-pagina.service';
+import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 import { Equipo } from 'src/app/interfaces/equipo.interface';
 import { of } from 'rxjs';
 

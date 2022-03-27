@@ -54,6 +54,7 @@ Thumbs.db
 
 #Jasmine
 /jasmine
+/reports/*
 # Cypress
 /cypress/videos
 /cypress/downloads

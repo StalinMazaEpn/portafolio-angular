@@ -48,7 +48,8 @@ describe('InfoPaginaService Test', () => {
     };
 
     httpClienteSpy.get.and.returnValue(of(mockupInfoPagina));
-    service['getDataPagina']().subscribe({
+    const keyFN = 'getDataPagina';
+    service[keyFN]().subscribe({
       next: (res: InfoPagina) => {
         expect(Object.keys(res)).toEqual(Object.keys(mockupInfoPagina));
         done();
@@ -65,7 +66,8 @@ describe('InfoPaginaService Test', () => {
       twitter: 'https://twitter.com/mauricio877'
     }];
     httpClienteSpy.get.and.returnValue(of(mockupInfoPagina));
-    service['getDataEquipo']().subscribe({
+    const keyFN = 'getDataEquipo';
+    service[keyFN]().subscribe({
       next: (res: Equipo[]) => {
         expect(Object.keys(res[0])).toEqual(Object.keys(mockupInfoPagina[0]));
         done();

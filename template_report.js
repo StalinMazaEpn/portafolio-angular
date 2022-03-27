@@ -1,3 +1,4 @@
+/* eslint-env es2020 */
 const path = require('path');
 const fs = require('fs');
 const fsextra = require('fs-extra');
@@ -36,11 +37,11 @@ async function copyFiles() {
 
     try {
          //Copy Cypress Test
-         if (fs.existsSync(path.resolve(__dirname, './cypress/results/cypress_test.xml'))) {
-            await  fsextra.copy(path.resolve(__dirname, './cypress/results/cypress_test.xml'), path.resolve(__dirname, './reports/cypress_test.xml'), fsConfig);
+         if (fs.existsSync(path.resolve(__dirname, './cypress/results/cypress_result.xml'))) {
+            await  fsextra.copy(path.resolve(__dirname, './cypress/results/cypress_result.xml'), path.resolve(__dirname, './reports/cypress_test.xml'), fsConfig);
             console.log('Cypress Report was successfully copied');
         } else{
-            throw new Error('Cannot find cypress_test.xml');
+            throw new Error('Cannot find cypress_result.xml');
         }
 
     } catch (err) {
